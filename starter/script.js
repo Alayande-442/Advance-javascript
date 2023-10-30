@@ -51,6 +51,13 @@ console.log(higherBmiChecker);
 console.log(markBmi);
 console.log(johnBmi);
 
+if (markBmi > johnBmi) {
+    console.log(`Mark ${markBmi} is higher than John ${johnBmi}`);
+    
+}else {
+    console.log(`john ${johnBmi} is greater than Mark ${markBmi}`);
+}
+
 // Template literals
 
 let firstName = "olaoluwa";
@@ -77,6 +84,10 @@ if (isOldEnough) {
 }else {
     console.log("my statement is false 🤷‍♂️");
 }
+
+let assumption = (String(23));
+
+console.log(typeof(assumption));
 
 
 

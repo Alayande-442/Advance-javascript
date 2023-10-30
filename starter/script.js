@@ -89,6 +89,16 @@ let assumption = (String(23));
 
 console.log(typeof(assumption));
 
+// type coersion
+console.log("i'm " + 23 + " years old");
+console.log("i'm " + '23' + " years old");
+
+let n = '10' - 1;
+n = n - 1;
+console.log(n);
+
+// truthy and values 
+
 
 
 

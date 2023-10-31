@@ -98,6 +98,47 @@ n = n - 1;
 console.log(n);
 
 // truthy and values 
+console.log(Boolean(0));
+console.log(Boolean(1));
+console.log(Boolean(""));
+console.log(Boolean([]));
+
+let money = 1;
+if(money) {
+    console.log("don't spend all");
+}else {
+    console.log("you can spend all");
+}
+
+let height;
+
+if (height) {
+    console.log("Height is defined");
+    
+}else {
+    console.log("height is undefined");
+}
+
+// strict and soft equality ===, ==
+
+let favourite = Number(prompt("What's your favourite number?"))
+
+if(favourite === 23) {
+    console.log("yes! 23 is a smart number");
+}else if (favourite === 7) {
+    console.log("You enter seven as a number");
+}else if (favourite == 20) {
+    console.log("20 is cool guessing number");
+}else {
+    console.log("your number is out of points");
+}
+
+if (favourite !== 23) {
+    console.log("we are only looking for 23");
+}
+
+
+// boolean logic
 
 
 

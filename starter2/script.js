@@ -50,63 +50,69 @@ console.log(myCalculation(5, 5));
 
 // Arrow function
 
-let myMath = (a, b) => {
-    return `the multiplication of ${a} and ${b} is ${2 * 5}`;
+// let myMath = (a, b) => {
+//     return `the multiplication of ${a} and ${b} is ${2 * 5}`;
 
-}
+// }
 
-console.log(myMath(2,3));
+// console.log(myMath(2,3));
 
 // function calling another function
 
-function cutFruitPieces(fruit) {
-    return fruit * 4;
-}
+// function cutFruitPieces(fruit) {
+//     return fruit * 4;
+// }
 
-function fruitProcessor (apples, oranges) {
-    let cutApples = cutFruitPieces(apples);
-    let cutOranges = cutFruitPieces(oranges);
-    const juice = `fruit with ${cutApples} apples and ${cutOranges} oranges are good for the body`;
-    return juice;
-}
+// function fruitProcessor (apples, oranges) {
+//     let cutApples = cutFruitPieces(apples);
+//     let cutOranges = cutFruitPieces(oranges);
+//     const juice = `fruit with ${cutApples} apples and ${cutOranges} oranges are good for the body`;
+//     return juice;
+// }
 
-let result = fruitProcessor(3, 4);
-console.log(result);
+// let result = fruitProcessor(3, 4);
+// console.log(result);
 
 
 // drills of when a function is calling another function with if and else statement
 
-function promo (simcard) {
-    return simcard * 2
-}
-function accessoriesStore(iphone, samsung) {
-    let promoIphone = promo(iphone);
-    let promoSamsung = promo(samsung);
+// function promo (simcard) {
+//     return simcard * 2
+// }
+// function accessoriesStore(iphone, samsung) {
+//     let promoIphone = promo(iphone);
+//     let promoSamsung = promo(samsung);
 
-    const sellers = `buy an Iphone 15 promax and Samsung galaxy from us and get ${promoIphone} charger and ${promoSamsung} Oraimo Airpod for free`;
-    return sellers;
-}
+//     const sellers = `buy an Iphone 15 promax and Samsung galaxy from us and get ${promoIphone} charger and ${promoSamsung} Oraimo Airpod for free`;
+//     return sellers;
+// }
 
-let myStore = accessoriesStore(1,1);
-console.log(myStore);
+// let myStore = accessoriesStore(1,1);
+// console.log(myStore);
 
 // function that caculate age 
 
-function calAge (birthYear, name) {
-    // let age = 2023 - birthYear;
-    return (`${name} is ${2023 - birthYear} years old`);
-    // return age;
-}
+// function calAge (birthYear, name) {
+//     // let age = 2023 - birthYear;
+//     return (`${name} is ${2023 - birthYear} years old`);
+//     // return age;
+// }
 
 // console.log(calAge(2002, "ola"));
-let ageResult = calAge(2002, "ola");
-console.log(ageResult);
+// let ageResult = calAge(2002, "ola");
+// console.log(ageResult);
 
 
 /*
 ************
 introduction to Arrays in javascript
-
-
 ************ 
 */
+
+let names = ["jacob", "john", "bola", "bolu", "shina", "aina", "tayo", "shola", ["Olu", "taye", "Alaba"]]
+console.log(names);
+
+const years = new Array(1991, 1992, 1993, 1994, "olumide");
+console.log(years);
+
+

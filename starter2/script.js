@@ -114,10 +114,64 @@ console.log(myNames);
 console.log(myNames[8][0]);
 console.log(myNames.length);
 console.log(myNames[myNames.length - 1]);
+myNames[9] = "mary";
+console.log(myNames);
 
 const years = new Array(1991, 1992, 1993, 1994, "olumide");
 console.log(years);
 
+
+// Exercise
+function calAge (birthYear) {
+    return 2023 - birthYear
+
+}
+
+const myYears = [1996, 1997, 1998, 1999, 2000];
+
+let calyears = calAge(myYears[0]);
+console.log(calyears);
+let ageCalulators = calAge(myYears[myYears.length - 1]);
+console.log(ageCalulators);
+
+let ages = [calAge(myYears[0]), calAge(myYears[myYears.length - 1])];
+console.log(ages);
+
+
+// Arrays operations or methods
+let programmingLanguages = ["Ruby", "Java", "Javascript", "python"];
+programmingLanguages.push("flutter");
+console.log(programmingLanguages);
+programmingLanguages.unshift("c#");
+console.log(programmingLanguages);
+
+console.log(programmingLanguages.shift());
+// console.log(programmingLanguages);
+
+// programmingLanguages.pop();
+// console.log(programmingLanguages);
+
+console.log(programmingLanguages.indexOf("Javascript"));
+
+// using includes method
+
+console.log(programmingLanguages.includes("C++"));
+console.log(programmingLanguages.includes("Java"));
+
+// drills
+
+function calTip (bill) {
+    if (bill >= 50 && bill <= 300) {
+        return bill * 0.15 //calculation of 15%
+    }else {
+        return bill * 0.20 // calculation of 20%
+    }
+
+}
+
+const bills = [125, 555, 44];
+const tips = [calTip(bills[0]), calTip(bills[1]), calTip(bills[2])]
+console.log(bills,tips);
 
 
 

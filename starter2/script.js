@@ -127,51 +127,95 @@ function calAge (birthYear) {
 
 }
 
-const myYears = [1996, 1997, 1998, 1999, 2000];
+// const myYears = [1996, 1997, 1998, 1999, 2000];
 
-let calyears = calAge(myYears[0]);
-console.log(calyears);
-let ageCalulators = calAge(myYears[myYears.length - 1]);
-console.log(ageCalulators);
+// let calyears = calAge(myYears[0]);
+// console.log(calyears);
+// let ageCalulators = calAge(myYears[myYears.length - 1]);
+// console.log(ageCalulators);
 
-let ages = [calAge(myYears[0]), calAge(myYears[myYears.length - 1])];
-console.log(ages);
+// let ages = [calAge(myYears[0]), calAge(myYears[myYears.length - 1])];
+// console.log(ages);
 
 
-// Arrays operations or methods
-let programmingLanguages = ["Ruby", "Java", "Javascript", "python"];
-programmingLanguages.push("flutter");
-console.log(programmingLanguages);
-programmingLanguages.unshift("c#");
-console.log(programmingLanguages);
+// // Arrays operations or methods
+// let programmingLanguages = ["Ruby", "Java", "Javascript", "python"];
+// programmingLanguages.push("flutter");
+// console.log(programmingLanguages);
+// programmingLanguages.unshift("c#");
+// console.log(programmingLanguages);
 
-console.log(programmingLanguages.shift());
+// console.log(programmingLanguages.shift());
 // console.log(programmingLanguages);
 
 // programmingLanguages.pop();
 // console.log(programmingLanguages);
 
-console.log(programmingLanguages.indexOf("Javascript"));
+// console.log(programmingLanguages.indexOf("Javascript"));
 
-// using includes method
+// // using includes method
 
-console.log(programmingLanguages.includes("C++"));
-console.log(programmingLanguages.includes("Java"));
+// console.log(programmingLanguages.includes("C++"));
+// console.log(programmingLanguages.includes("Java"));
 
 // drills
 
-function calTip (bill) {
-    if (bill >= 50 && bill <= 300) {
-        return bill * 0.15 //calculation of 15%
-    }else {
-        return bill * 0.20 // calculation of 20%
-    }
+// function calTip (bill) {
+//     if (bill >= 50 && bill <= 300) {
+//         return bill * 0.15 //calculation of 15%
+//     }else {
+//         return bill * 0.20 // calculation of 20%
+//     }
 
+// }
+
+// console.log(totals);
+
+// const bills = [125, 555, 44];
+// const tips = [calTip(bills[0]), calTip(bills[1]), calTip(bills[2])]
+
+// let totals = (bills + tips);
+// console.log(bills,tips, totals);
+
+// let myFullName = "Alayande olaoluwa";
+// let myArrayFullName = ["Alayande olaoluwa", "Atobatele john", "Ayedade williams"]
+// console.log(myArrayFullName);
+// console.log(myFullName);
+
+
+// *********** Object in javascript ***********
+
+const myInfo = {
+    firstName: "Olaoluwa",
+    lastName: "Alayande",
+    height: 1.65,
+    skin: "dark",
+    hobbies: ["swimming", "hockey", "skipping", "football"],
+    isShort: true,
+};
+console.log(myInfo);
+
+// How to retrieve data from an object using dot and bracket notation
+console.log(myInfo.firstname);
+console.log(myInfo.lastName);
+console.log(myInfo["hobbies"]);
+
+const nameKey = "Name";
+
+console.log(myInfo["first" + nameKey]);
+console.log(myInfo["last" + nameKey]);
+
+let interestedIn = prompt("what do you wants to know abou ola? firstName, lastName, skin, hobbies")
+
+// console.log(myInfo[interestedIn]);
+
+if (myInfo[interestedIn]) {
+    console.log(myInfo[interestedIn]);
+}else {
+    console.log("you have enter a wrong input");
 }
 
-const bills = [125, 555, 44];
-const tips = [calTip(bills[0]), calTip(bills[1]), calTip(bills[2])]
-console.log(bills,tips);
+
 
 
 

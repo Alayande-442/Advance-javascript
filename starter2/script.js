@@ -109,10 +109,15 @@ introduction to Arrays in javascript
 ************ 
 */
 
-let names = ["jacob", "john", "bola", "bolu", "shina", "aina", "tayo", "shola", ["Olu", "taye", "Alaba"]]
-console.log(names);
+let myNames = ["jacob", "john", "bola", "bolu", "shina", "aina", "tayo", "shola", ["Olu", "taye", "Alaba"]]
+console.log(myNames);
+console.log(myNames[8][0]);
+console.log(myNames.length);
+console.log(myNames[myNames.length - 1]);
 
 const years = new Array(1991, 1992, 1993, 1994, "olumide");
 console.log(years);
+
+
 
 

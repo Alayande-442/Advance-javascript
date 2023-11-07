@@ -189,14 +189,22 @@ const myInfo = {
     firstName: "Olaoluwa",
     lastName: "Alayande",
     height: 1.65,
+    birthYear:2000,
     skin: "dark",
     hobbies: ["swimming", "hockey", "skipping", "football"],
     isShort: true,
+    calAge: function () {
+        return 2023 - this.birthYear;
+    },
+
+    summary: function () {
+        return `${this.firstName} is a very good learner and has a height of ${this.height}`;
+    }
 };
 console.log(myInfo);
 
 // How to retrieve data from an object using dot and bracket notation
-console.log(myInfo.firstname);
+console.log(myInfo.firstName);
 console.log(myInfo.lastName);
 console.log(myInfo["hobbies"]);
 
@@ -214,6 +222,48 @@ if (myInfo[interestedIn]) {
 }else {
     console.log("you have enter a wrong input");
 }
+
+myInfo.location = "Lagos";
+myInfo["age"] = 20;
+console.log(myInfo);
+
+let drillObject = `${this.firstName} has ${myInfo.hobbies.length} hobbies and likes ${myInfo.hobbies[3]} most`;
+console.log(drillObject);
+
+
+// object method
+console.log(myInfo.calAge(2000));
+console.log(myInfo["calAge"](2001));
+
+// console.log(this.summary());
+console.log(myInfo.summary("olaoluwa"));
+
+
+// drills
+
+const mark = {
+    fullName: "Mark Miller",
+    mass: 78,
+    height: 1.69,
+    calBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return mark.bmi
+    }
+}
+
+const john = {
+    fullName: "John Smith",
+    mass: 92,
+    height: 1.95,
+    calBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return mark.bmi
+    }
+}
+
+console.log(mark.calBMI(), mark.calBMI());
+console.log(john.calBMI());
+
 
 
 

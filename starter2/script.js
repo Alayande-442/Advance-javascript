@@ -6,9 +6,9 @@ let passTest = false;
 if (passTest) hasDriversLicence = true;
 if (hasDriversLicence) console.log("I can Drive");
 
-function identity () {
-    console.log("my name is olaoluwa");
-    console.log("I'm an ICT instructor");
+function identity() {
+  console.log("my name is olaoluwa");
+  console.log("I'm an ICT instructor");
 }
 
 identity();
@@ -23,25 +23,23 @@ identity();
 // console.log(result);
 // console.log(fruitProcessor(10, 20));
 
-
 // calculating users age with function
 
 // function declaration
 // this type of function can be hoisted
 
-function ageCalulator (birthYear) {
-    let ageResult = 2023 - birthYear;
-    return ageResult;
-    // we can also return our operation directly
-    // return 2023 - birthYear;
-
+function ageCalulator(birthYear) {
+  let ageResult = 2023 - birthYear;
+  return ageResult;
+  // we can also return our operation directly
+  // return 2023 - birthYear;
 }
 console.log(ageCalulator(2005));
 
 // Example of an expression function or annonymous function
 let myCalculation = function (a, b) {
-    return a * b;
-}
+  return a * b;
+};
 console.log(myCalculation(5, 5));
 
 // this can't be Hoist
@@ -73,7 +71,6 @@ console.log(myCalculation(5, 5));
 // let result = fruitProcessor(3, 4);
 // console.log(result);
 
-
 // drills of when a function is calling another function with if and else statement
 
 // function promo (simcard) {
@@ -90,7 +87,7 @@ console.log(myCalculation(5, 5));
 // let myStore = accessoriesStore(1,1);
 // console.log(myStore);
 
-// function that caculate age 
+// function that caculate age
 
 // function calAge (birthYear, name) {
 //     // let age = 2023 - birthYear;
@@ -102,14 +99,23 @@ console.log(myCalculation(5, 5));
 // let ageResult = calAge(2002, "ola");
 // console.log(ageResult);
 
-
 /*
 ************
 introduction to Arrays in javascript
 ************ 
 */
 
-let myNames = ["jacob", "john", "bola", "bolu", "shina", "aina", "tayo", "shola", ["Olu", "taye", "Alaba"]]
+let myNames = [
+  "jacob",
+  "john",
+  "bola",
+  "bolu",
+  "shina",
+  "aina",
+  "tayo",
+  "shola",
+  ["Olu", "taye", "Alaba"],
+];
 console.log(myNames);
 console.log(myNames[8][0]);
 console.log(myNames.length);
@@ -120,11 +126,9 @@ console.log(myNames);
 const years = new Array(1991, 1992, 1993, 1994, "olumide");
 console.log(years);
 
-
 // Exercise
-function calAge (birthYear) {
-    return 2023 - birthYear
-
+function calAge(birthYear) {
+  return 2023 - birthYear;
 }
 
 // const myYears = [1996, 1997, 1998, 1999, 2000];
@@ -136,7 +140,6 @@ function calAge (birthYear) {
 
 // let ages = [calAge(myYears[0]), calAge(myYears[myYears.length - 1])];
 // console.log(ages);
-
 
 // // Arrays operations or methods
 // let programmingLanguages = ["Ruby", "Java", "Javascript", "python"];
@@ -182,24 +185,23 @@ function calAge (birthYear) {
 // console.log(myArrayFullName);
 // console.log(myFullName);
 
-
 // *********** Object in javascript ***********
 
 const myInfo = {
-    firstName: "Olaoluwa",
-    lastName: "Alayande",
-    height: 1.65,
-    birthYear:2000,
-    skin: "dark",
-    hobbies: ["swimming", "hockey", "skipping", "football"],
-    isShort: true,
-    calAge: function () {
-        return 2023 - this.birthYear;
-    },
+  firstName: "Olaoluwa",
+  lastName: "Alayande",
+  height: 1.65,
+  birthYear: 2000,
+  skin: "dark",
+  hobbies: ["swimming", "hockey", "skipping", "football"],
+  isShort: true,
+  calAge: function () {
+    return 2023 - this.birthYear;
+  },
 
-    summary: function () {
-        return `${this.firstName} is a very good learner and has a height of ${this.height}`;
-    }
+  summary: function () {
+    return `${this.firstName} is a very good learner and has a height of ${this.height}`;
+  },
 };
 console.log(myInfo);
 
@@ -213,14 +215,16 @@ const nameKey = "Name";
 console.log(myInfo["first" + nameKey]);
 console.log(myInfo["last" + nameKey]);
 
-let interestedIn = prompt("what do you wants to know abou ola? firstName, lastName, skin, hobbies")
+// let interestedIn = prompt(
+//   "what do you wants to know abou ola? firstName, lastName, skin, hobbies"
+// );
 
 // console.log(myInfo[interestedIn]);
 
 if (myInfo[interestedIn]) {
-    console.log(myInfo[interestedIn]);
-}else {
-    console.log("you have enter a wrong input");
+  console.log(myInfo[interestedIn]);
+} else {
+  console.log("you have enter a wrong input");
 }
 
 myInfo.location = "Lagos";
@@ -230,7 +234,6 @@ console.log(myInfo);
 let drillObject = `${this.firstName} has ${myInfo.hobbies.length} hobbies and likes ${myInfo.hobbies[3]} most`;
 console.log(drillObject);
 
-
 // object method
 console.log(myInfo.calAge(2000));
 console.log(myInfo["calAge"](2001));
@@ -238,34 +241,45 @@ console.log(myInfo["calAge"](2001));
 // console.log(this.summary());
 console.log(myInfo.summary("olaoluwa"));
 
-
 // drills
 
 const mark = {
-    fullName: "Mark Miller",
-    mass: 78,
-    height: 1.69,
-    calBMI: function () {
-        this.bmi = this.mass / this.height ** 2;
-        return mark.bmi
-    }
-}
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+  calBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return mark.bmi;
+  },
+};
 
 const john = {
-    fullName: "John Smith",
-    mass: 92,
-    height: 1.95,
-    calBMI: function () {
-        this.bmi = this.mass / this.height ** 2;
-        return mark.bmi
-    }
-}
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return mark.bmi;
+  },
+};
 
 console.log(mark.calBMI(), mark.calBMI());
 console.log(john.calBMI());
 
+//*******COMMENT  function that convert celsius to kelvin *******
 
+let absoluteConstanr = 273;
+let measurementKelvin = function () {
+  const measurement = {
+    type: "temp",
+    unit: "celsius",
+    value: parseFloat(prompt("Degree celsius: ")),
+  };
 
+  const kelvin = measurement.value + absoluteConstanr;
 
+  return kelvin;
+};
+console.log(measurementKelvin());
 
-
+// ******** COMMENT *********

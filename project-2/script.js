@@ -53,6 +53,8 @@ document.addEventListener('keydown', function (e) {
   //     }
   //   }
 
+  //  COMMENT this was done to Restructure our code to avoid repetition and maintain DRY principle
+
   if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
     closeModal();
   }

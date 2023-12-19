@@ -27,3 +27,24 @@ const restaurant = {
     },
   },
 };
+
+// COMMENT test
+
+const arr = [2, 4, 6, 8];
+
+console.log(arr);
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+const [, , z] = arr;
+console.log(z);
+
+let studentName = ['john', 'paul', 'peter', 'ola'];
+
+let [j, p1, p2] = studentName;
+console.log(j, p1, p2);
+
+const [firstElement, secondElement] = restaurant.categories;
+
+console.log(firstElement, secondElement);

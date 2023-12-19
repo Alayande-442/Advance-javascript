@@ -45,6 +45,11 @@ let studentName = ['john', 'paul', 'peter', 'ola'];
 let [j, p1, p2] = studentName;
 console.log(j, p1, p2);
 
-const [firstElement, secondElement] = restaurant.categories;
+let [firstElement, secondElement] = restaurant.categories;
 
+console.log(firstElement, secondElement);
+
+let temp = firstElement;
+firstElement = secondElement;
+secondElement = temp;
 console.log(firstElement, secondElement);

@@ -202,3 +202,23 @@ const properties = Object.keys(openingHours);
 console.log(properties);
 
 console.log(`we open on ${properties.length} days`);
+
+// COMMENT Set in javascript COMMENT
+const orderSet = new Set(['apple', 'mango', 'cashew', 'pineapple']);
+console.log(orderSet);
+console.log(new Set('Olaoluwaaaaab'));
+
+console.log(orderSet.size);
+
+console.log(orderSet.has('cocoa'));
+
+console.log(orderSet.has('apple'));
+console.log(orderSet.delete('mango'));
+
+// COMMENT looping through a set
+
+for (let items of orderSet) console.log(items);
+
+const staff = ['chef', 'manager', 'waiters', 'chef'];
+console.log(new Set(staff));
+console.log([...new Set(staff)]);

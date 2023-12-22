@@ -215,10 +215,59 @@ console.log(orderSet.has('cocoa'));
 console.log(orderSet.has('apple'));
 console.log(orderSet.delete('mango'));
 
-// COMMENT looping through a set
+// COMMENT looping through a set COMMENT
 
 for (let items of orderSet) console.log(items);
 
 const staff = ['chef', 'manager', 'waiters', 'chef'];
 console.log(new Set(staff));
 console.log([...new Set(staff)]);
+//COMMENT
+
+// COMMENT Maps in javascript COMMENT
+const fruitItems = new Map();
+fruitItems.set('name', 'mango');
+fruitItems.set('color', 'green');
+console.log(fruitItems.set('isripe', true));
+
+// rest.Set(document.querySelector('hi', 'my Heading'));
+// console.log(rest);
+
+// drilling with map
+
+const question = new Map([
+  ['question1', 'what is the best programming language in the world?'],
+  [1, 'C++'],
+  [2, 'java'],
+  [3, 'javascript'],
+  ['correct', 3],
+  [true, "you're correct"],
+  [false, 'try again'],
+]);
+
+console.log(question);
+
+console.log(question.get('question1'));
+
+for (let [key, value] of question) {
+  if (typeof key === 'number') {
+    console.log(`answer ${key}: ${value}`);
+  }
+}
+
+// const answer = Number(prompt('Enter your answer'));
+// console.log(answer);
+
+// console.log(question.get(question.get('correct') === answer));
+
+// COMMENT working with string COMMENT
+
+let airline = 'TAP air Nigeria';
+
+const plane = 'A4B33';
+console.log(airline[0]);
+console.log(airline[4]);
+console.log(airline.length);
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.slice(4, 7));

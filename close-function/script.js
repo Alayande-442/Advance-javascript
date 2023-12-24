@@ -119,3 +119,113 @@ arikAir.book(234, 'Alayande olaoluwa');
 arikAir.book(234, ' Adeyeye peter');
 
 console.log(arikAir);
+
+const ukAirLine = {
+  airline: 'ukAirLine',
+  iataCode: 'UK',
+  bookings: [],
+};
+
+const book = arikAir.book;
+
+// COMMENT call method
+book.call(ukAirLine, 423, 'Mr Abba shitu');
+console.log(ukAirLine);
+
+book.call(arikAir, 233, 'olajide ariyo');
+console.log(arikAir);
+
+const portugalAir = {
+  airline: 'portugalAir',
+  iataCode: 'POR',
+  bookings: [],
+};
+
+book.call(portugalAir, 410, 'Alarape Taiwo');
+console.log(portugalAir);
+
+// COMMENT Apply method
+const flightData = [239, 'Sholanke Taoreed'];
+
+book.apply(portugalAir, flightData);
+console.log(portugalAir);
+
+book.call(portugalAir, ...flightData);
+console.log(portugalAir);
+
+// COMMENT Bind method COMMENT Not clear enough to code anything
+
+// COMMENT Immediately involking a function expression IIFE
+
+(function () {
+  console.log('this function is immediately involked');
+})();
+
+// COMMENT we can also do that for arrow function
+
+(() => console.log('this is an IIFE with arrow function'))();
+
+// COMMENT closures
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passenger`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+
+console.dir(booker);
+
+// COMMENT Another Example of closure from chatGPT
+
+function createCounter() {
+  let count = 0;
+
+  return function () {
+    count++;
+    console.log(count);
+  };
+}
+
+const counter = createCounter();
+counter(); // Outputs: 1
+counter(); // Outputs: 2
+
+// COMMENT Another Example of closure from chatGPT COMMENT with EventListener
+
+// function setupClickListener() {
+//   let message = 'Button clicked!';
+
+//   document.getElementById('myButton').addEventListener('click', function () {
+//     alert(message);
+//   });
+// }
+
+// setupClickListener();
+
+// COMMENT cracky head twist
+const multiplyTwoNumber = function () {
+  let firstNumber = 5;
+
+  return function () {
+    let result = firstNumber * 2;
+    console.log(result);
+    return result;
+  };
+};
+
+let resultCal = multiplyTwoNumber();
+
+resultCal();
+
+setTimeout(function () {
+  console.log('hello world');
+}, 5000);

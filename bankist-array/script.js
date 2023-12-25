@@ -65,14 +65,19 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
-// const currencies = new Map([
-//   ['USD', 'United States dollar'],
-//   ['EUR', 'Euro'],
-//   ['GBP', 'Pound sterling'],
-// ]);
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// COMMENT start of the bankist task
 
+const displayMovements = function (movements) {
+  movements.forEach(function (mov, i) {});
+};
+
+displayMovements(account1.movements);
 /////////////////////////////////////////////////
 
 // COMMENT startter
@@ -143,11 +148,13 @@ movements2.forEach(movements => {
 
 // COMMENT using forEach with map
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
-currencies.forEach(function (value, key, map) {
-  console.log(`${key} : ${value}`);
-});
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
+// currencies.forEach(function (value, key, map) {
+//   console.log(`${key} : ${value}`);
+// });
+
+console.log('hello testttt');

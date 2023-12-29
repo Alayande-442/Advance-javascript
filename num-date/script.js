@@ -10,7 +10,7 @@
 // DIFFERENT DATA! Contains movement dates, currency and locale
 
 const account1 = {
-  owner: 'Jonas Schmedtmann',
+  owner: 'Alayande Olaoluwa',
   movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
   interestRate: 1.2, // %
   pin: 1111,
@@ -36,14 +36,14 @@ const account2 = {
   pin: 2222,
 
   movementsDates: [
-    '2019-11-01T13:15:33.035Z',
-    '2019-11-30T09:48:16.867Z',
-    '2019-12-25T06:04:23.907Z',
-    '2020-01-25T14:18:46.235Z',
-    '2020-02-05T16:33:06.386Z',
-    '2020-04-10T14:43:26.374Z',
-    '2020-06-25T18:49:59.371Z',
-    '2020-07-26T12:01:20.894Z',
+    '2023-11-01T13:15:33.035Z',
+    '2023-11-30T09:48:16.867Z',
+    '2023-12-25T06:04:23.907Z',
+    '2023-01-25T14:18:46.235Z',
+    '2023-02-05T16:33:06.386Z',
+    '2023-04-10T14:43:26.374Z',
+    '2023-06-25T18:49:59.371Z',
+    '2023-07-26T12:01:20.894Z',
   ],
   currency: 'USD',
   locale: 'en-US',
@@ -94,7 +94,7 @@ const displayMovements = function (movements, sort = false) {
         <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
-        <div class="movements__value">${mov}€</div>
+        <div class="movements__value">${mov.toFixed(2)}€</div>
       </div>
     `;
 
@@ -104,19 +104,19 @@ const displayMovements = function (movements, sort = false) {
 
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${acc.balance}€`;
+  labelBalance.textContent = `${acc.balance.toFixed(2)}€`;
 };
 
 const calcDisplaySummary = function (acc) {
   const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumIn.textContent = `${incomes}€`;
+  labelSumIn.textContent = `${incomes.toFixed(2)}€`;
 
   const out = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumOut.textContent = `${Math.abs(out)}€`;
+  labelSumOut.textContent = `${Math.abs(out).toFixed(2)}€`;
 
   const interest = acc.movements
     .filter(mov => mov > 0)
@@ -126,7 +126,7 @@ const calcDisplaySummary = function (acc) {
       return int >= 1;
     })
     .reduce((acc, int) => acc + int, 0);
-  labelSumInterest.textContent = `${interest}€`;
+  labelSumInterest.textContent = `${interest.toFixed(2)}€`;
 };
 
 const createUsernames = function (accs) {
@@ -151,9 +151,66 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
+// COMMENT start of logout timer section
+// set time to 5 min
+
+let time = 10;
+const timer = setInterval(function () {
+  const min = String(Math.trunc(time / 60)).padStart(2, '0');
+  const sec = String(Math.trunc(time % 60)).padStart(2, '0');
+  labelTimer.textContent = `${min}: ${sec}`;
+
+  // decrease 1s
+  time -= 1;
+}, 1000);
+
+if (time === 0) {
+  clearInterval(timer);
+  containerApp.style.opacity = 0;
+
+  labelWelcome.textContent = `Login to get started`;
+}
+// call the timer every section
+// each call, print the remain time to the UI
+// when at 0 logout the user
+// COMMENT end of logout timer section
+
 ///////////////////////////////////////
 // Event handlers
+
+// Fake login
 let currentAccount;
+
+// currentAccount = account1;
+// updateUI(currentAccount);
+// containerApp.style.opacity = 100;
+
+const nowd = new Date();
+
+const options = {
+  hour: 'numeric',
+  minute: 'numeric',
+  long: 'long', //long, 2-digits
+  year: 'numeric',
+  weekday: 'long',
+};
+
+const locale = navigator.language;
+
+labelDate.textContent = new Intl.DateTimeFormat(locale, options, locale).format(
+  nowd
+);
+
+// COMMENT this was actually replaced with COMMENT the one at thwe top
+
+// const day = `${nowd.getDate()}`.padStart(2, '0');
+// const month = `${nowd.getMonth() + 1}`.padStart(2, '0');
+// const year = nowd.getFullYear();
+// const hour = nowd.getHours();
+// const min = nowd.getMinutes();
+// const sec = nowd.getSeconds();
+
+// labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}:${sec}`;
 
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
@@ -206,14 +263,16 @@ btnTransfer.addEventListener('click', function (e) {
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
 
-  const amount = Number(inputLoanAmount.value);
+  const amount = Math.floor(inputLoanAmount.value);
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
-    // Add movement
-    currentAccount.movements.push(amount);
+    setTimeout(function () {
+      // Add movement
+      currentAccount.movements.push(amount);
 
-    // Update UI
-    updateUI(currentAccount);
+      // Update UI
+      updateUI(currentAccount);
+    }, 3000);
   }
   inputLoanAmount.value = '';
 });
@@ -257,7 +316,7 @@ console.log(10 === 10.0);
 
 // binary 2 = 0 - 1
 
-// COMMENT conersion of sting to number
+// COMMENT conversion of sting to number
 console.log(Number('23'));
 console.log(23 + +'23');
 
@@ -313,3 +372,98 @@ const isEVen = n => n % 2 === 0;
 console.log(isEVen(20));
 console.log(isEVen(3));
 console.log(isEVen(400));
+
+console.log(Math.trunc(Math.random() * 6) + 1);
+
+console.log('hello');
+console.log(23);
+// console.log(2.452).toFixed(2);
+const test = (2.452).toFixed(2);
+console.log(Number(test));
+
+// COMMENT
+
+const isEven = function (n) {
+  if (n % 2 === 0) {
+    return 'even';
+  } else {
+    return 'odd';
+  }
+};
+
+let check = isEven(20);
+let check2 = isEven(5);
+let check3 = isEven(7);
+let check4 = isEven(3);
+console.log(check);
+console.log(check2);
+console.log(check3);
+console.log(check4);
+
+labelBalance.addEventListener('click', function () {
+  [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
+    if (i % 2 === 0) {
+      row.style.backgroundColor = 'orangered';
+    }
+  });
+});
+
+// COMMENT working with numeric separator
+
+const diameter = 287_670_000_000;
+// same as 287,760,000,000
+console.log(diameter);
+
+// COMMENT working with BigInt
+
+//COMMENT the highest number javascript can work with is = 9007199254740991
+
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(2 ** 53 + 1);
+
+// COMMENT working with date and time COMMENT
+
+/* 
+  dates in javascript works in four different ways
+  1.using the new constructor
+
+*/
+
+const now = new Date();
+console.log(now);
+
+console.log(new Date('December 25, 2024'));
+
+console.log(new Date(account2.movementsDates.at(1)));
+const datetest = new Date(2024, 7, 2, 8, 3, 6);
+
+console.log(datetest.getFullYear());
+console.log(datetest.getMonth());
+console.log(datetest.getDay());
+console.log(datetest.toISOString());
+
+console.log(Date.now());
+
+console.log(datetest.setFullYear(2024));
+
+// COMMENT wotking with SETTIMEOUT COMMENT
+
+setTimeout(
+  (ing1, ing2) => console.log(`hello world i like ${ing1} and ${ing2}`),
+  10000,
+  'pasta',
+  'chickwizz'
+);
+
+console.log('waiting....');
+
+// COMMENT working with setInterval
+
+// setInterval(function () {
+//   const now = new Date();
+//   console.log(now.getFullYear());
+//   console.log(now.getMonth());
+//   console.log(now.getDay());
+//   console.log(now);
+// }, 1000);
